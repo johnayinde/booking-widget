@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#3b82f6" />
+  <meta name="description" content="Universal Event Booking Widget - Book tickets for amazing events" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <title>Event Booking Widget</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+  <!-- Demo Usage Examples (for development) -->
+  <!-- <script>
+      // Example of how external websites would use the widget
+      if (window.location.hostname === "localhost") {
+        // Demo buttons for testing
+        document.addEventListener("DOMContentLoaded", () => {
+          const demoContainer = document.createElement("div");
+          demoContainer.innerHTML = `
+            <div style="position: fixed; top: 20px; left: 20px; z-index: 1000; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-family: Arial, sans-serif;">
+              <h3 style="margin: 0 0 15px 0; color: #333;">Demo Integration Examples</h3>
+              
+              <button 
+                data-event-booking="ticketing" 
+                data-config='{"theme": "light", "branding": {"primaryColor": "#3b82f6"}}'
+                style="display: block; width: 100%; margin: 5px 0; padding: 10px; background: #3b82f6; color: white; border: none; border-radius: 5px; cursor: pointer;"
+              >
+                Event Ticketing Widget
+              </button>
+              
+              <button 
+                onclick="window.EventBookingWidget.init({identifier: 'ticketing', branding: {primaryColor: '#059669'}})"
+                style="display: block; width: 100%; margin: 5px 0; padding: 10px; background: #059669; color: white; border: none; border-radius: 5px; cursor: pointer;"
+              >
+                Custom Green Theme
+              </button>
+              
+              <button 
+                onclick="window.EventBookingWidget.init({identifier: 'ticketing', branding: {primaryColor: '#dc2626'}})"
+                style="display: block; width: 100%; margin: 5px 0; padding: 10px; background: #dc2626; color: white; border: none; border-radius: 5px; cursor: pointer;"
+              >
+                Custom Red Theme
+              </button>
+              
+              <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee; font-size: 12px; color: #666;">
+                <strong>Integration Code:</strong><br>
+                <code>&lt;script src="booking-widget.js"&gt;&lt;/script&gt;</code><br>
+                <code>&lt;button data-event-booking="ticketing"&gt;Book Event&lt;/button&gt;</code>
+              </div>
+            </div>
+          `;
+          document.body.appendChild(demoContainer);
+        });
+      }
+    </script> -->
+</body>
+
+</html>

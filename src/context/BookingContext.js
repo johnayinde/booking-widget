@@ -122,7 +122,9 @@ function bookingReducer(state, action) {
       };
 
     case ActionTypes.UPDATE_SELECTED_TICKETS:
-      const updatedTickets = [...state.selectedTickets];
+      const updatedTickets = Array.isArray(state.selectedTickets)
+        ? [...state.selectedTickets]
+        : [];
       const ticketIndex = updatedTickets.findIndex(
         (t) => t.id === action.payload.id
       );
@@ -167,7 +169,10 @@ function bookingReducer(state, action) {
       };
 
     case ActionTypes.CALCULATE_TOTAL:
-      const total = state.selectedTickets.reduce((sum, ticket) => {
+      const ticketsArray = Array.isArray(state.selectedTickets)
+        ? state.selectedTickets
+        : [];
+      const total = ticketsArray.reduce((sum, ticket) => {
         return sum + ticket.price * ticket.quantity;
       }, 0);
 
