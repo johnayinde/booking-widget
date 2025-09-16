@@ -1,0 +1,27 @@
+{
+  "name": "event-booking-widget",
+  "version": "1.0.0",
+  "description": "Universal event booking widget for websites",
+  "main": "event-booking-widget.min.js",
+  "module": "event-booking-widget.min.js",
+  "types": "types.d.ts",
+  "files": [
+    "event-booking-widget.min.js",
+    "event-booking-widget.min.css",
+    "types.d.ts",
+    "README.md"
+  ],
+  "keywords": [
+    "event",
+    "booking",
+    "widget",
+    "tickets",
+    "react"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourcompany/event-booking-widget"
+  },
+  "homepage": "https://github.com/yourcompany/event-booking-widget#readme"
+}

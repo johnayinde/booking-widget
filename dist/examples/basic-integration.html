@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Booking Widget - Basic Integration</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .demo-section { margin: 30px 0; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        .btn { padding: 12px 24px; background: #3b82f6; color: white; border: none; border-radius: 6px; cursor: pointer; margin: 10px 5px; }
+        .btn:hover { background: #2563eb; }
+        .code { background: #f5f5f5; padding: 15px; border-radius: 6px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>Event Booking Widget Integration Examples</h1>
+    
+    <div class="demo-section">
+        <h3>1. Basic Button Integration</h3>
+        <button data-event-booking="ticketing" class="btn">
+            Book Event Tickets
+        </button>
+        
+        <div class="code">
+            <strong>HTML:</strong><br>
+            &lt;script src="event-booking-widget.min.js"&gt;&lt;/script&gt;<br>
+            &lt;button data-event-booking="ticketing"&gt;Book Event Tickets&lt;/button&gt;
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h3>2. Custom Theme Integration</h3>
+        <button 
+            data-event-booking="ticketing" 
+            data-config='{"branding": {"primaryColor": "#059669"}}' 
+            class="btn" style="background: #059669;"
+        >
+            Book with Green Theme
+        </button>
+        
+        <div class="code">
+            <strong>HTML:</strong><br>
+            &lt;button data-event-booking="ticketing" data-config='{"branding": {"primaryColor": "#059669"}}'&gt;<br>
+            &nbsp;&nbsp;Book with Green Theme<br>
+            &lt;/button&gt;
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h3>3. Programmatic Integration</h3>
+        <button onclick="openCustomWidget()" class="btn" style="background: #dc2626;">
+            Open Custom Widget
+        </button>
+        
+        <div class="code">
+            <strong>JavaScript:</strong><br>
+            function openCustomWidget() {<br>
+            &nbsp;&nbsp;EventBookingWidget.init({<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;identifier: 'ticketing',<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;branding: { primaryColor: '#dc2626' }<br>
+            &nbsp;&nbsp;});<br>
+            }
+        </div>
+    </div>
+
+    <!-- Widget Script -->
+    <script src="../event-booking-widget.min.js"></script>
+    
+    <script>
+        function openCustomWidget() {
+            EventBookingWidget.init({
+                identifier: 'ticketing',
+                apiBaseUrl: 'http://127.0.0.1:8000/api',
+                branding: { primaryColor: '#dc2626' }
+            });
+        }
+        
+        console.log('Event Booking Widget loaded successfully!');
+        console.log('Available methods:', Object.keys(EventBookingWidget));
+    </script>
+</body>
+</html>
